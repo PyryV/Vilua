@@ -12,3 +12,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.Menu {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.menuLink {
+  padding: 5px;
+  background: lightgreen;
+}
+
+.menuLink:link {
+  text-decoration: none;
+  color: green;
+}
+
+.menuLink:visited {
+  color: green;
+}
+
+.menuLink:hover {
+  color: black;
+}
+
+.login {
+  padding: 10px;
+}

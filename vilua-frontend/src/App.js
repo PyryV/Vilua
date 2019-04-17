@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import './index.css'
+import {
+  BrowserRouter as Router,
+  Route, Redirect, Link
+} from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div>
+    <div className='login'>
       <form id='login' >
         Käyttäjätunnus
         Salasana
@@ -16,7 +21,9 @@ const Login = () => {
 const Menu = () => {
   return (
     <div className='Menu'>
-      Main menu
+      <Link className='menuLink' to="/">Info</Link>
+      <Link className='menuLink' to="/">Tapahtumat</Link>
+      <Link className='menuLink' to="/login">Kirjaudu sisään</Link>
     </div>
   )
 }
@@ -24,8 +31,14 @@ const Menu = () => {
 const App = () => {
   return (
     <div className='App'>
-      <h1>Vilua ry</h1>
-      <Menu />
+      <Router>
+        <h1>Vilua ry</h1>
+        <Menu />
+        <Route exact path='/login' render={() => 
+          <Login />
+        }/>
+      </Router>
+
     </div>
   )
 }
