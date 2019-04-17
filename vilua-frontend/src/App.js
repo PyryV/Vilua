@@ -17,11 +17,18 @@ const Login = () => {
     </div>
   )
 }
+const Info = () => {
+  return (
+    <div>
+      Vilua on Viherlaakson lukion alumniyhdistys
+    </div>
+  )
+}
 
 const Menu = () => {
   return (
     <div className='Menu'>
-      <Link className='menuLink' to="/">Info</Link>
+      <Link className='menuLink' to="/info">Info</Link>
       <Link className='menuLink' to="/">Tapahtumat</Link>
       <Link className='menuLink' to="/login">Kirjaudu sisään</Link>
     </div>
@@ -36,6 +43,9 @@ const App = () => {
         <Menu />
         <Route exact path='/login' render={() => 
           <Login />
+        }/>
+        <Route exact path='/info' render={() =>
+          <Info /> 
         }/>
       </Router>
 
